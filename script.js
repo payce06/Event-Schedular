@@ -50,3 +50,26 @@ function renderEvents() {
         eventList.appendChild(wrapper);
     });
 }
+
+function updateCountdowns() {
+    const now = new Date();
+    events.forEach((event, i) => {
+        const remaining = new Date(event.date) - now;
+        const display = document.getElementById(`cd-${i}`);
+        if (display) {
+            display.textContent = formatRemaining(remaining);
+        }
+    });
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.getElementById('title').value;
+    const datetime = document.getElementById('datetime').value;
+    if (!title || !datetime) return;
+
+    events.push({title, date: datetime });
+    saveEvents();
+    renderEvents();
+    form.reset();
+});
