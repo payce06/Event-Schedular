@@ -30,3 +30,23 @@ function renderEvents() {
 
         const title = document.createElement('div');
         title.innerHTML = `<strong>${event.title}</strong><br><small>${event.date}</small>`;
+
+                const countdown = document.createElement('div');
+        countdown.className = 'countdown';
+        countdown.id = `cd-${index}`;
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = '✖';
+        deleteBtn.className = 'delete.btn';
+        deleteBtn.onclick = () => {
+            events.splice(index, 1);
+            saveEvents();
+            renderEvents();
+        };
+
+        wrapper.appendChild(title);
+        wrapper.appendChild(countdown);
+        wrapper.appendChild(deleteBtn);
+        eventList.appendChild(wrapper);
+    });
+}
