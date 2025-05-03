@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html land="en">
+    <head>
+        <meta charset="UTF-8" />
+        <mets name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Countdown Manager</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>🕒 Event Countdown</h1>
+
+            <form id="eventForm">
+                <input type="text" id="title" placeholder="Event Name" required />
+                <input type="dateTime-local" id="datetime" required />
+                <button type="submit">Add Event</button>
+            </form>
+
+            <div id="eventList"></div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
