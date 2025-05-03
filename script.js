@@ -73,3 +73,7 @@ form.addEventListener('submit', (e) => {
     renderEvents();
     form.reset();
 });
+
+loadEvents();
+renderEvents();
+setInterval(updateCountdowns, 1000);
